@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Data Integrity</title>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQqLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("shubham-dhage-gC_aoAjQl2Q-unsplash.jpg"); 
+            background-position: center center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.7); /* Couleur de fond avec une opacité de 0.7 */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #333333;
+        }
+
+        input[type="file"] {
+            margin-bottom: 30px;
+            padding: 15px;
+            width: calc(100% - 30px);
+            box-sizing: border-box;
+            border: 3px solid #333333;
+            border-radius: 5px;
+            font-size: 16px;
+            
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #475fd9;
+            color: #ffffff;
+            border: 1px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            margin: 10px;
+            display: inline-block;
+            position: relative;
+        }
+
+        button:hover {
+            background-color: #2f4cad;
+        }
+
+        button i {
+            margin-right: 10px;
+        }
+
+        pre {
+            font-family: Consolas, monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload Data</h1>
+
+
+        <div>
+            <input type="file" id="fileInput" />
+            <br/>
+            <button id="uploadAndExtract"><i class="fas fa-cloud-upload-alt"></i> Upload and Extract</button>
+            <pre id="contentDisplay"></pre>
+            <p id="uploadMessage"></p>
+        </div>
+
+        <h1>Verify Data Integrity</h1>
+
+        <button id="deployButton"><i class="fas fa-upload"></i> Update Hash</button>
+        <br/><br/>
+        <button id="verifyButton"><i class="fas fa-check"></i> Check Data Integrity</button>
+
+        <div id="result"></div>
+
+        
+
+    </div>
+
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
